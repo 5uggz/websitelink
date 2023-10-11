@@ -5,11 +5,17 @@
   </head>
   <body>
     <h1>Website Links</h1>
-
+    
     <p>Moss News Hidden Link</p>
-    <a href="https://fishme.me" target="_blank">Click me to go to fishme.me</a>
+    <button onclick="openFishMeLink()">Open fishme.me</button>
 
     <p>Util- Proxy, Games, Media saving, Chat Platform, and Bookmarklets</p>
     <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden link.</p>
+
+    <script>
+      function openFishMeLink() {
+        window.open("https://fishme.me", "_blank");
+      }
+    </script>
   </body>
 </html>
