@@ -6,22 +6,28 @@
   <body>
     <h1>Website Links</h1>
 
-    <p>Moss News Hidden Link</p>
-    <button onclick="openIframeWithFishMe()">Open fishme.me in iframe</button>
+    
+    
+    <button onclick="openIframe('https://fishme.me')">Open Moss News</button>
+    <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden links.</p>
+    <button onclick="openIframe('https://example.com')">Open ...</button>
 
-    <p>Util- Proxy, Games, Media saving, Chat Platform, and Bookmarklets</p>
-    <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden link.</p>
+    
+    
+
+    <div id="iframeContainer"></div>
 
     <script>
-      function openIframeWithFishMe() {
-        const iframeContainer = document.createElement("div");
-        iframeContainer.style.width = "100%";
-        iframeContainer.style.height = "500px";
-        iframeContainer.style.overflow = "hidden";
-        iframeContainer.innerHTML = `
-          <iframe src="https://fishme.me" frameborder="0" scrolling="yes" style="width: 100%; height: 100%;"></iframe>
-        `;
-        document.body.appendChild(iframeContainer);
+      function openIframe(url) {
+        const iframeContainer = document.getElementById("iframeContainer");
+        const iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.frameBorder = 0;
+        iframe.scrolling = "yes";
+        iframe.style.width = "100%";
+        iframe.style.height = "500px";
+        
+        iframeContainer.appendChild(iframe);
       }
     </script>
   </body>
