@@ -6,14 +6,11 @@
   <body>
     <h1>Website Links</h1>
 
-    
-    
     <button onclick="openIframe('https://fishme.me')">Open Moss News</button>
     <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden links. May Load Slow</p>
     <button onclick="openIframe('https://example.com')">Open ...</button>
 
-    
-    
+    <button onclick="closeAllIframes()">Close All</button>
 
     <div id="iframeContainer"></div>
 
@@ -26,8 +23,15 @@
         iframe.scrolling = "yes";
         iframe.style.width = "100%";
         iframe.style.height = "500px";
-        
         iframeContainer.appendChild(iframe);
+      }
+
+      function closeAllIframes() {
+        const iframeContainer = document.getElementById("iframeContainer");
+        // Remove all iframes from the container
+        while (iframeContainer.firstChild) {
+          iframeContainer.removeChild(iframeContainer.firstChild);
+        }
       }
     </script>
   </body>
