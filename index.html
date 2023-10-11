@@ -7,19 +7,22 @@
     <h1>Website Links</h1>
 
     <p>Moss News Hidden Link</p>
-    <button onclick="openBlankPageWithFishMe()">Open about:blank with fishme.me</button>
+    <button onclick="openIframeWithFishMe()">Open fishme.me in iframe</button>
 
     <p>Util- Proxy, Games, Media saving, Chat Platform, and Bookmarklets</p>
     <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden link.</p>
 
     <script>
-      function openBlankPageWithFishMe() {
-        const newTab = window.open("about:blank", "_blank");
-        newTab.document.open();
-        newTab.document.write("<iframe src='https://fishme.me' width='100%' height='500' frameborder='0' scrolling='yes'></iframe>");
-        newTab.document.close();
+      function openIframeWithFishMe() {
+        const iframeContainer = document.createElement("div");
+        iframeContainer.style.width = "100%";
+        iframeContainer.style.height = "500px";
+        iframeContainer.style.overflow = "hidden";
+        iframeContainer.innerHTML = `
+          <iframe src="https://fishme.me" frameborder="0" scrolling="yes" style="width: 100%; height: 100%;"></iframe>
+        `;
+        document.body.appendChild(iframeContainer);
       }
     </script>
   </body>
 </html>
-
