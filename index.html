@@ -8,21 +8,26 @@
     <h1>Website Links</h1>
 
     <div id="linkContainer">
+      <hr>
       <button onclick="openIframe('https://fishme.me')">Open Moss News</button>
+      <hr>
       <button onclick="openIframe('https://kazwi.com')">Open Kazwire</button>
+      <hr>
       <button onclick="openIframe('https://example.com')">Open ...</button>
+      <hr>
     </div>
 
-    <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden links. -LOADING SLOW-</p>
-    <hr>
-
-    <p>Notes- pretty straight forward, not much to note. -CURRENTLY BROKEN-</p>
-    <hr>
-
-    <p>Notes- </p>
-    <hr>
+    <div id="textContainer">
+      <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden links. -LOADING SLOW-</p>
+      <p>_________________________________________________________________</p>
       
-    <p>More Coming Soon!</p>
+      <p>Notes- pretty straight forward, not much to note. -CURRENTLY BROKEN-</p>
+      <p>_________________________________________________________________</p>
+      
+      <p>Notes- </p>
+      <p>_________________________________________________________________</p>
+      <p>More Coming Soon!</p>
+    </div>
 
     <script>
       function openIframe(url) {
@@ -41,14 +46,18 @@
         iframe.style.height = "100%";
         iframe.style.zIndex = "9999";
 
-        // Remove the header and buttons
+        // Remove the header, buttons, and text
         const header = document.querySelector("h1");
         const linkContainer = document.querySelector("#linkContainer");
+        const textContainer = document.querySelector("#textContainer");
         if (header) {
           header.remove();
         }
         if (linkContainer) {
           linkContainer.remove();
+        }
+        if (textContainer) {
+          textContainer.remove();
         }
 
         // Append the new iframe to the body
