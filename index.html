@@ -8,17 +8,8 @@
     <h1>Website Links</h1>
 
     <button onclick="openIframe('https://fishme.me')">Open Moss News</button>
-    <p>Notes- Go to "Why the U.S. Government has banned TikTok" and click "misleading" in the article to launch the hidden links. -LOADING SLOW-</p>
-    <p>_________________________________________________________________</p>
-    
     <button onclick="openIframe('https://kazwi.com')">Open Kazwire</button>
-    <p>Notes- pretty straight forward, not much to note. -CURRENTLY BROKEN-</p>
-    <p>_________________________________________________________________</p>
-    
     <button onclick="openIframe('https://example.com')">Open ...</button>
-    <p>Notes- </p>
-    <p>_________________________________________________________________</p>
-    <p>More Coming Soon!</p>
 
     <script>
       function openIframe(url) {
@@ -37,10 +28,14 @@
         iframe.style.height = "100%";
         iframe.style.zIndex = "9999";
 
-        // Remove any existing iframes
-        const existingIframes = document.querySelectorAll("iframe");
-        existingIframes.forEach((existingIframe) => {
-          existingIframe.remove();
+        // Remove all buttons and text
+        const buttons = document.querySelectorAll("button");
+        const textElements = document.querySelectorAll("p");
+        buttons.forEach((button) => {
+          button.remove();
+        });
+        textElements.forEach((textElement) => {
+          textElement.remove();
         });
 
         // Append the new iframe to the body
